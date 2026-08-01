@@ -50,12 +50,16 @@ This repository tracks the effort to support **customizable conflict resolution*
 
 ## Open Topics
 
-- **Conflict-on-fetch handling.** Agreement is needed on how conflicts detected during fetch should be handled, likely through custom ancestor tracking rather than relying on the parameters of the `.serverRecordChanged` error.
+- **Conflict-on-fetch handling.** A conflict-on-send arises when the client sends a record that has changed on the server in the meantime and is surfaced through the `.serverRecordChanged` error. A conflict-on-fetch arises when a newer server record is fetched while the local row holds unsynced changes. Agreement is needed on treating the latter as a first-class conflict, detected through custom ancestor tracking, since the error parameters only cover the send case.
 - **Role of the last-known server record.** Does it represent the last confirmed server state, or the most up-to-date record we have, including before we’ve even sent the record to iCloud? Should it serve as the ancestor in a three-way merge? Can we drop the eager store of in-flight records?
+- **No-ancestor case.** A conflict can arise without a last-known server record, for example when two devices create a row with the same ID. The open questions are how this case should be handled and whether it should be called reconciliation.
+- **Timestamp management for opted-out tables.** Should per-field modification timestamps still be maintained and synced for tables that use a custom strategy instead of the default “field-wise last edit wins”? Keeping them would allow switching back to the default strategy later and exposing timestamps to custom resolvers.
+- **Record decoding.** Custom resolvers need `CKRecord`s decoded into `@Table` types, which the fork achieves through a synthetic SQL `SELECT` executed on the database. Is this approach acceptable?
 - **Macro infrastructure.** Design and implementation of the `@SyncedTable`/`@SyncedField` macros for configuring the sync engine.
+- **Built-in merge policies.** Which merge policies should the library ship with beyond `.latest`? The prototype includes `.counter` and `.set` as demonstrations.
 
-## Future Tasks
+## Backlog
 
 - Ensure timestamp update for conflicts where both sides remove a value (see `sameFieldRemoval_conflictOnSend_clientNewer` test)
-- Ensure the client-newer value wins during reconciliation when no last-known server record exists (see `reconciliation_fetchBeforeSend_clientNewer` and `reconciliation_sendBeforeFetch_clientNewer` tests)
+- Add test coverage for asset-backed fields in the record decoding path
 - Align `CKRecord`’s print representation with `RowVersion` (`@123` instead of 📅)
