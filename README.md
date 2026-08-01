@@ -2,10 +2,6 @@
 
 This repository tracks the effort to support **customizable conflict resolution** for CloudKit sync in [SQLiteData](https://github.com/pointfreeco/sqlite-data). The work started in the umbrella discussion [\#272](https://github.com/pointfreeco/sqlite-data/discussions/272) and has since unfolded across issues, pull requests, and design conversations in the upstream repository, so the discussion no longer reflects the latest state. This page collects the current status of all related work, the queue of planned pull requests, and the open design topics.
 
-The implementation happens in the fork [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data), from which the pull requests listed below are opened. The conceptual foundation lives in the companion repository [sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes), which documents SQLiteData’s current CloudKit sync behavior and proposes a revised model for built-in conflict resolution.
-
-*Last updated on August 1, 2026.*
-
 ## Links
 
 - [CloudKit docs for SQLiteData](https://swiftpackageindex.com/pointfreeco/sqlite-data/main/documentation/sqlitedata/cloudkitsync) — Official documentation for CloudKit synchronization in SQLiteData
