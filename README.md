@@ -6,10 +6,10 @@ This repository tracks the effort to support **customizable conflict resolution*
 
 - [CloudKit docs for SQLiteData](https://swiftpackageindex.com/pointfreeco/sqlite-data/main/documentation/sqlitedata/cloudkitsync) — Official documentation for CloudKit synchronization in SQLiteData
 - [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data) — Fork where the implementation happens
-- [sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes) — Notes on SQLiteData’s current CloudKit sync behavior and a conceptual model for built-in conflict resolution
-- [`Mergeable` protocol in Forked](https://drewmccormack.github.io/Forked/Forked/documentation/forked/mergeable) — Merging protocol from the Forked framework
-- [Conflict resolution in Ensembles 3](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution) — Conflict resolution in the Ensembles framework
-- [Ensembles 3’s SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration/) — Conflict resolution in Ensembles’ SwiftData integration
+- [structuredpath/sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes) — Notes on SQLiteData’s current CloudKit sync behavior and a conceptual model for built-in conflict resolution
+- [`Mergeable` protocol in the Forked framework](https://drewmccormack.github.io/Forked/Forked/documentation/forked/mergeable)
+- [Conflict resolution in the Ensembles framework](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution)
+- [Ensembles’ SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration/)
 
 ## Activity
 
