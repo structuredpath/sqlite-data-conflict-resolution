@@ -1,10 +1,19 @@
 # Customizable Conflict Resolution for SQLiteData
 
-This repository tracks the effort to support customizable conflict resolution for CloudKit sync in [SQLiteData](https://github.com/pointfreeco/sqlite-data). The work started in the umbrella discussion [\#272](https://github.com/pointfreeco/sqlite-data/discussions/272) and has since unfolded across issues, pull requests, and design conversations in the upstream repository, so the discussion no longer reflects the latest state. This page collects the current status of all related work, the queue of planned pull requests, and the open design topics.
+This repository tracks the effort to support **customizable conflict resolution** for CloudKit sync in [SQLiteData](https://github.com/pointfreeco/sqlite-data). The work started in the umbrella discussion [\#272](https://github.com/pointfreeco/sqlite-data/discussions/272) and has since unfolded across issues, pull requests, and design conversations in the upstream repository, so the discussion no longer reflects the latest state. This page collects the current status of all related work, the queue of planned pull requests, and the open design topics.
 
 The implementation happens in the fork [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data), from which the pull requests listed below are opened. The conceptual foundation lives in the companion repository [sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes), which documents SQLiteData’s current CloudKit sync behavior and proposes a revised model for built-in conflict resolution.
 
 *Last updated on August 1, 2026.*
+
+## Links
+
+- [CloudKit docs for SQLiteData](https://swiftpackageindex.com/pointfreeco/sqlite-data/main/documentation/sqlitedata/cloudkitsync) — Official documentation for CloudKit synchronization in SQLiteData
+- [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data) — Fork where the implementation happens
+- [sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes) — Notes on SQLiteData’s current CloudKit sync behavior and a conceptual model for built-in conflict resolution
+- [`Mergeable` protocol in Forked](https://drewmccormack.github.io/Forked/Forked/documentation/forked/mergeable) — Merging protocol from the Forked framework
+- [Conflict resolution in Ensembles 3](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution) — Conflict resolution in the Ensembles framework
+- [Ensembles 3’s SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration/) — Conflict resolution in Ensembles’ SwiftData integration
 
 ## Issues & Posts
 
