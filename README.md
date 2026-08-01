@@ -25,7 +25,7 @@ The implementation happens in the fork [structuredpath/sqlite-data](https://gith
 | 2026‑02‑27 | Slack Post | [Screenshot](slack/2026-02-27-sqlite-data-plans.png) | Discussion about timeline and plans for SQLiteData in 2026 | ✅ Timeline outlined, call offered |
 | 2026‑03‑03 | PR | [\#410](https://github.com/pointfreeco/sqlite-data/pull/410) | Fix metadatabase crash in tests on macOS 15 | ➡️ Superseded by [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) |
 | 2026‑03‑03 | PR | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) | Set `CKRecord.modificationDate` in `MockCloudDatabase` | 🟠 Open |
-| 2026‑03‑04 | PR | [\#412](https://github.com/pointfreeco/sqlite-data/pull/412) | Fix `MockCloudDatabase` record mutation in modify callback | ➡️ Subsumed by [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) |
+| 2026‑03‑04 | PR | [\#412](https://github.com/pointfreeco/sqlite-data/pull/412) | Fix `MockCloudDatabase` record mutation in modify callback | ➡️ Superseded by [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) |
 | 2026‑03‑05 | PR | [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) | **Overhaul of merge conflict tests** | 📝 Draft |
 | 2026‑07‑23 | Comment | [\#506](https://github.com/pointfreeco/sqlite-data/pull/506#issuecomment-5108352240) | Observations on third-party fix for sync divergence when `userModificationTime` stamps tie | ✅ OP agreed with more structured approach |
 | 2026‑07‑23 | PR | [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) | Return copied `CKRecord`s when modifying `MockCloudDatabase` (Brandon’s replacement of [\#412](https://github.com/pointfreeco/sqlite-data/pull/412)) | ✅ Merged |
