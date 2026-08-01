@@ -15,7 +15,7 @@ The implementation happens in the fork [structuredpath/sqlite-data](https://gith
 - [Conflict resolution in Ensembles 3](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution) — Conflict resolution in the Ensembles framework
 - [Ensembles 3’s SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration/) — Conflict resolution in Ensembles’ SwiftData integration
 
-## Issues & Posts
+## Activity
 
 | Date | Type | Ref | Title/Description | Status |
 |---|---|---|---|---|
@@ -41,14 +41,15 @@ The implementation happens in the fork [structuredpath/sqlite-data](https://gith
 | 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes #410) | 🟠 About to be merged |
 | 2026‑07‑24 | PR | [\#510](https://github.com/pointfreeco/sqlite-data/pull/510) | Deliver latest record state in `ModifyRecordsCallback` test helper | ✅ Merged |
 
-## Planned Pull Requests
+## Next Steps
 
-| Branch | Title | Dependencies |
-|---|---|---|
-| `pr1-reconciliation-tests` | Reconciliation aka two-way merge test coverage | #414 |
-| `pr2-fix-conflict-server-newer` | Fix conflicts favoring client over newer server (#354) | #414 |
-| `pr3-mock-change-tag` | Mock `CKRecord.recordChangeTag` | #411 |
-| `pr4-defer-server-record-save` | Remove last-known server record update from send path | #414, `pr1` |
+- Await merge of [\#508](https://github.com/pointfreeco/sqlite-data/pull/508)
+- Await feedback for [\#411](https://github.com/pointfreeco/sqlite-data/pull/411)
+- Submit PR for mocking `CKRecord.recordChangeTag` (`pr3`, depends on #411)
+- Finalize [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) for review
+- Submit PR for reconciliation aka two-way merge test coverage (`pr1`, depends on #414)
+- Submit PR fixing conflicts favoring the client over a newer server, addressing #354 (`pr2`, depends on #414)
+- Submit PR removing the last-known server record update from the send path (`pr4`, depends on #414 and `pr1`)
 
 ## Open Topics
 
