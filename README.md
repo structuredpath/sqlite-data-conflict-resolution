@@ -65,7 +65,7 @@ The work is meant to be split into two stages:
 ### Next Steps
 
 - Await merge of [\#508](https://github.com/pointfreeco/sqlite-data/pull/508)
-- Await feedback for [\#411](https://github.com/pointfreeco/sqlite-data/pull/411)
+- Await review of [\#411](https://github.com/pointfreeco/sqlite-data/pull/411)
 - Submit PR for mocking `CKRecord.recordChangeTag` (`pr3`, depends on [\#411](https://github.com/pointfreeco/sqlite-data/pull/411))
 - Finalize [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) for review
 - Submit PR for reconciliation aka two-way merge test coverage (`pr1`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
