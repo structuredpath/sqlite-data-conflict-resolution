@@ -57,14 +57,13 @@ The work is meant to be split into two stages:
 | 2026‑05‑19 | Fork PR | [\#1](https://github.com/structuredpath/sqlite-data/pull/1) | Reconciliation for no-ancestor case, contributed by Drew McCormack as a discussion PR on my fork | ✅ Ideas adopted |
 | 2026‑07‑23 | Comment | [\#506](https://github.com/pointfreeco/sqlite-data/pull/506#issuecomment-5108352240) | Observations on third-party fix for sync divergence when `userModificationTime` stamps tie | ✅ OP agreed with more structured approach |
 | 2026‑07‑23 | PR | [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) | Return copied `CKRecord`s when modifying `MockCloudDatabase` (Brandon’s replacement of [\#412](https://github.com/pointfreeco/sqlite-data/pull/412)) | ✅ Merged |
-| 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | 🟠 **Awaiting merge** |
+| 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | ✅ Merged |
 | 2026‑07‑24 | PR | [\#510](https://github.com/pointfreeco/sqlite-data/pull/510) | Deliver latest record state in `ModifyRecordsCallback` test helper | ✅ Merged |
 
 ## Tasks
 
 ### Next Steps
 
-- Await merge of [\#508](https://github.com/pointfreeco/sqlite-data/pull/508)
 - Await review of [\#411](https://github.com/pointfreeco/sqlite-data/pull/411)
 - Submit PR for mocking `CKRecord.recordChangeTag` (`pr3`, depends on [\#411](https://github.com/pointfreeco/sqlite-data/pull/411))
 - Finalize [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) for review
