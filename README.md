@@ -49,7 +49,9 @@ This repository tracks the effort to support **customizable conflict resolution*
 | 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | 🟠 **Awaiting merge** |
 | 2026‑07‑24 | PR | [\#510](https://github.com/pointfreeco/sqlite-data/pull/510) | Deliver latest record state in `ModifyRecordsCallback` test helper | ✅ Merged |
 
-## Next Steps
+## Tasks
+
+### Next Steps
 
 - Await merge of [\#508](https://github.com/pointfreeco/sqlite-data/pull/508)
 - Await feedback for [\#411](https://github.com/pointfreeco/sqlite-data/pull/411)
@@ -58,6 +60,12 @@ This repository tracks the effort to support **customizable conflict resolution*
 - Submit PR for reconciliation aka two-way merge test coverage (`pr1`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
 - Submit PR fixing conflicts favoring the client over a newer server, addressing #354 (`pr2`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
 - Submit PR removing the last-known server record update from the send path (`pr4`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) and `pr1`)
+
+### Backlog
+
+- Ensure timestamp update for conflicts where both sides remove a value (see `sameFieldRemoval_conflictOnSend_clientNewer` test)
+- Add test coverage for asset-backed fields in the record decoding path
+- Align `CKRecord`’s print representation with `RowVersion` (`@123` instead of 📅)
 
 ## Open Topics
 
@@ -68,9 +76,3 @@ This repository tracks the effort to support **customizable conflict resolution*
 - **Record decoding.** Custom resolvers need `CKRecord`s decoded into `@Table` types, which the fork achieves through a synthetic SQL `SELECT` executed on the database. Is this approach acceptable?
 - **Macro infrastructure.** Design and implementation of the `@SyncedTable`/`@SyncedField` macros for configuring the sync engine.
 - **Built-in merge policies.** Which merge policies should the library ship with beyond `.latest`? The prototype includes `.counter` and `.set` as demonstrations.
-
-## Backlog
-
-- Ensure timestamp update for conflicts where both sides remove a value (see `sameFieldRemoval_conflictOnSend_clientNewer` test)
-- Add test coverage for asset-backed fields in the record decoding path
-- Align `CKRecord`’s print representation with `RowVersion` (`@123` instead of 📅)
