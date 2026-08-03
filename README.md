@@ -19,7 +19,18 @@ This repository tracks the effort to support **customizable conflict resolution*
 
 ## Approach
 
-*To be written.*
+The conflict resolution is reworked into an explicit three-way merge model. A conflict is detected at the row level and resolved by merging the ancestor, client, and server versions of the row field by field. Unchanged fields and one-sided edits resolve trivially, and a merge policy is consulted only when both sides diverge from the ancestor. The model is described in the [conceptual document](https://github.com/structuredpath/sqlite-data-sync-notes/blob/main/BuiltInConflictResolutionModel.md), prototyped in [\#370](https://github.com/pointfreeco/sqlite-data/pull/370), and implemented in the [fork](https://github.com/structuredpath/sqlite-data/tree/sp-main).
+
+Compared to the current behavior, this changes the following.
+
+- **First-class conflicts.** Conflicts are detected in both the conflict-on-send and conflict-on-fetch scenarios. Currently, conflicts are never detected as such, and every incoming server record is merged through the same per-field timestamp checks.
+- **Confirmed server state.** The last-known server record only ever contains confirmed server state, making it suitable as the merge ancestor. Currently, it is eagerly updated with in-flight records before the server confirms them.
+- **No-ancestor conflicts.** A conflict can also arise when no last-known server record is available, leaving only the client and server versions. Such conflicts are handled explicitly through a two-way merge, with reconciliation as the proposed term. Currently, they fall through the regular merge logic.
+
+The work is meant to be split into two stages:
+
+- **Stage 1.** Expresses the built-in “field-wise last edit wins” strategy through the three-way merge model without changing the public API. It makes the semantics of the current behavior precise and fixes correctness issues in both the implementation and the mock testing infrastructure.
+- **Stage 2.** Opens the merge logic up for customization, letting tables declare per-field merge policies via a macro-based API alongside a set of built-in policies shipped with the library.
 
 ## Activity
 
