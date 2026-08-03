@@ -1,15 +1,25 @@
 # Customizable Conflict Resolution for SQLiteData
 
-This repository tracks the effort to support **customizable conflict resolution** for CloudKit sync in [SQLiteData](https://github.com/pointfreeco/sqlite-data). The work started in the umbrella discussion [\#272](https://github.com/pointfreeco/sqlite-data/discussions/272) and has since unfolded across issues, pull requests, and design conversations in the upstream repository, so the discussion no longer reflects the latest state. This page collects the current status of all related work, the queue of planned pull requests, and the open design topics.
+This repository tracks the effort to support **customizable conflict resolution** for CloudKit sync in [SQLiteData](https://github.com/pointfreeco/sqlite-data). The work started in the umbrella discussion [\#272](https://github.com/pointfreeco/sqlite-data/discussions/272) and has since unfolded across issues, pull requests, and design conversations in the upstream repository, so the discussion no longer reflects the latest state. This page serves as a **hub for the effort**. It outlines the motivation and the proposed approach, and it collects the current status of all related work, the queue of planned pull requests, and the open design topics.
 
-## Links
+## Resources
 
 - [CloudKit docs for SQLiteData](https://swiftpackageindex.com/pointfreeco/sqlite-data/main/documentation/sqlitedata/cloudkitsync) — Official documentation for CloudKit synchronization in SQLiteData
-- [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data) — Fork where the implementation happens
 - [structuredpath/sqlite-data-sync-notes](https://github.com/structuredpath/sqlite-data-sync-notes) — Notes on SQLiteData’s current CloudKit sync behavior and a conceptual model for built-in conflict resolution
-- [`Mergeable` protocol in the Forked framework](https://drewmccormack.github.io/Forked/Forked/documentation/forked/mergeable)
-- [Conflict resolution in the Ensembles framework](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution)
-- [Ensembles’ SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration/)
+- [structuredpath/sqlite-data](https://github.com/structuredpath/sqlite-data) — Fork of SQLiteData containing the in-progress implementation
+- [Forked](https://github.com/drewmccormack/Forked) — Library for merging concurrent data changes with a Git-like model (see [`Mergeable` protocol](https://drewmccormack.github.io/Forked/Forked/documentation/forked/mergeable))
+- [Ensembles 3](https://github.com/mentalfaculty/Ensembles3) — Sync framework for Core Data and SwiftData (see [Conflict resolution](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/conflictresolution) and [SwiftData integration](https://mentalfaculty.github.io/Ensembles3/Ensembles/documentation/ensembles/swiftdataintegration))
+
+## Motivation
+
+- **Preventing silent data loss.** The built-in “field-wise last edit wins” strategy can discard valid changes when devices concurrently edit the same field of the same row, especially when multiple participants collaborate on shared records. Custom resolution makes it possible to preserve changes from both sides instead of letting one win purely by timestamp.
+- **Domain-specific merge semantics.** Counters should sum their deltas, sets should combine additions and removals from both sides, and complex fields could even use embedded [CRDTs](https://en.wikipedia.org/wiki/CRDT) for merging. Naive “last edit wins” cannot express such semantics.
+- **Extracting the built-in strategy.** The built-in strategy is deeply entangled with the sync engine internals and suffers from [many subtle issues](https://github.com/structuredpath/sqlite-data-sync-notes/blob/main/CurrentBehavior.md). Extracting it behind an explicit API makes the merge logic easier to reason about and the issues easier to address.
+- **Sensible default, ergonomic customization.** The “field-wise last edit wins” strategy remains the default and requires no configuration. Tables that need stronger, domain-aware merging opt in by declaring per-field merge policies. Ideally via a macro-based API, keeping the customization declarative and lightweight.
+
+## Approach
+
+*To be written.*
 
 ## Activity
 
@@ -36,7 +46,7 @@ This repository tracks the effort to support **customizable conflict resolution*
 | 2026‑05‑19 | Fork PR | [\#1](https://github.com/structuredpath/sqlite-data/pull/1) | Reconciliation for no-ancestor case, contributed by Drew McCormack as a discussion PR on my fork | ✅ Ideas adopted |
 | 2026‑07‑23 | Comment | [\#506](https://github.com/pointfreeco/sqlite-data/pull/506#issuecomment-5108352240) | Observations on third-party fix for sync divergence when `userModificationTime` stamps tie | ✅ OP agreed with more structured approach |
 | 2026‑07‑23 | PR | [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) | Return copied `CKRecord`s when modifying `MockCloudDatabase` (Brandon’s replacement of [\#412](https://github.com/pointfreeco/sqlite-data/pull/412)) | ✅ Merged |
-| 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | 🟠 **About to be merged** |
+| 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | 🟠 **Awaiting merge** |
 | 2026‑07‑24 | PR | [\#510](https://github.com/pointfreeco/sqlite-data/pull/510) | Deliver latest record state in `ModifyRecordsCallback` test helper | ✅ Merged |
 
 ## Next Steps
