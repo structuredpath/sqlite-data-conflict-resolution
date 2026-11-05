@@ -45,31 +45,33 @@ The work is meant to be split into two stages:
 | 2026‑01‑01 | Discussion | [\#352](https://github.com/pointfreeco/sqlite-data/discussions/352) | Macro-based CloudKit configuration via `@SyncedTable`/`@SyncedField` | ✅ API confirmed |
 | 2026‑01‑02 | PR | [\#353](https://github.com/pointfreeco/sqlite-data/pull/353) | ~~Improve MergeConflictTests coverage and naming~~ | ➡️ Superseded by [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) |
 | 2026‑01‑02 | Issue | [\#354](https://github.com/pointfreeco/sqlite-data/issues/354) | Violation of “last edit wins” conflict resolution strategy | 🟠 **Open** |
-| 2026‑01‑05 | Issue | [\#356](https://github.com/pointfreeco/sqlite-data/issues/356) | Inconsistent conflict resolution between production and tests due to unpopulated `CKRecord.modificationDate` in mocks | 🟠 **To be fixed by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)** |
+| 2026‑01‑05 | Issue | [\#356](https://github.com/pointfreeco/sqlite-data/issues/356) | Inconsistent conflict resolution between production and tests due to unpopulated `CKRecord.modificationDate` in mocks | 🟠 **Open**, inconsistency addressed by [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑01‑08 | Slack Post | n/a | Update on my work on customizable conflict resolution | ✅ Answered |
 | 2026‑01‑13 | PR | [\#370](https://github.com/pointfreeco/sqlite-data/pull/370) | **Three-way merge model for built-in conflict resolution for CloudKit sync** | 📝 Draft |
 | 2026‑01‑28 | Comment | [\#386](https://github.com/pointfreeco/sqlite-data/pull/386#issuecomment-3813266210) | Role of last-known server record & explanation of conflict-on-fetch scenario | ✅ Next step identified |
 | 2026‑02‑27 | Slack Post | [Screenshot](slack/2026-02-27-sqlite-data-plans.png) | Discussion about timeline and plans for SQLiteData in 2026 | ✅ Timeline outlined, call offered |
 | 2026‑03‑03 | PR | [\#410](https://github.com/pointfreeco/sqlite-data/pull/410) | ~~Fix metadatabase crash in tests on macOS 15~~ | ➡️ Superseded by [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) |
-| 2026‑03‑03 | PR | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) | ~~Set `CKRecord.modificationDate` in `MockCloudDatabase`~~ | ➡️ Superseded by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) |
+| 2026‑03‑03 | PR | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) | ~~Set `CKRecord.modificationDate` in `MockCloudDatabase`~~ | ➡️ Superseded by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) and [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑03‑04 | PR | [\#412](https://github.com/pointfreeco/sqlite-data/pull/412) | ~~Fix `MockCloudDatabase` record mutation in modify callback~~ | ➡️ Superseded by [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) |
-| 2026‑03‑05 | PR | [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) | **Overhaul of merge conflict tests** | 📝 Draft, depends on [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) |
+| 2026‑03‑05 | PR | [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) | **Overhaul of merge conflict tests** | 📝 Draft, to be rebased onto [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑05‑19 | Fork PR | [\#1](https://github.com/structuredpath/sqlite-data/pull/1) | Reconciliation for no-ancestor case, contributed by Drew McCormack as a discussion PR on my fork | ✅ Ideas adopted |
 | 2026‑07‑23 | Comment | [\#506](https://github.com/pointfreeco/sqlite-data/pull/506#issuecomment-5108352240) | Observations on third-party fix for sync divergence when `userModificationTime` stamps tie | ✅ OP agreed with more structured approach |
 | 2026‑07‑23 | PR | [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) | Return copied `CKRecord`s when modifying `MockCloudDatabase` (Brandon’s replacement of [\#412](https://github.com/pointfreeco/sqlite-data/pull/412)) | ✅ Merged |
 | 2026‑07‑24 | PR | [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) | Fix in-memory metadatabase creation in `defaultMetadatabase` (reframes [\#410](https://github.com/pointfreeco/sqlite-data/pull/410)) | ✅ Merged |
 | 2026‑07‑24 | PR | [\#510](https://github.com/pointfreeco/sqlite-data/pull/510) | Deliver latest record state in `ModifyRecordsCallback` test helper | ✅ Merged |
 | 2026‑11‑03 | Comment | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411#issuecomment-6615993277) | Brandon’s review of [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) asking to avoid swizzling in production code | ✅ Addressed by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) |
-| 2026‑11‑04 | PR | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) | Set `CKRecord` system fields in `MockCloudDatabase` (replaces swizzling from [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) with an archive roundtrip and folds in `recordChangeTag` mocking) | 🟠 **Awaiting review** |
+| 2026‑11‑04 | PR | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) | ~~Set `CKRecord` system fields in `MockCloudDatabase`~~ (replaces swizzling from [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) with an archive roundtrip and includes `recordChangeTag` mocking) | ➡️ Superseded by [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
+| 2026‑11‑04 | Comment | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573#issuecomment-6640035322) | Brandon’s preference for an underscored `_modificationDate` property over the archive roundtrip | ✅ Accepted |
+| 2026‑11‑04 | PR | [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) | Properly track `modificationDate` in mock database (Brandon’s replacement of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | 🟠 **Open** |
 
 ## Tasks
 
 ### Next Steps
 
-- Await review of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) and close [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) once resolved
-- Rebase [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) onto [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) and finalize it for review
+- Await answer on whether [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) has a chance of landing at all
+- Rebase [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) onto [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) and finalize it for review
 - Submit PR for reconciliation aka two-way merge test coverage (`pr1`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
-- Submit PR fixing conflicts favoring the client over a newer server, addressing #354 (`pr2`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
+- Submit PR fixing conflicts favoring the client over a newer server, addressing #354 (`pr2`, fix ready on top of [\#574](https://github.com/pointfreeco/sqlite-data/pull/574))
 - Submit PR removing the last-known server record update from the send path (`pr4`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) and `pr1`)
 
 ### Backlog
@@ -81,7 +83,7 @@ The work is meant to be split into two stages:
 ## Open Topics
 
 - **Conflict-on-fetch handling.** A conflict-on-send arises when the client sends a record that has changed on the server in the meantime and is surfaced through the `.serverRecordChanged` error. A conflict-on-fetch arises when a newer server record is fetched while the local row holds unsynced changes. Agreement is needed on treating the latter as a first-class conflict, detected through custom ancestor tracking, since the error parameters only cover the send case.
-- **Role of the last-known server record.** Does it represent the last confirmed server state, or the most up-to-date record we have, including before we’ve even sent the record to iCloud? Should it serve as the ancestor in a three-way merge? Can we drop the eager store of in-flight records?
+- **Role of the last-known server record.** Does it represent the last confirmed server state, or the most up-to-date record we have, including before we’ve even sent the record to iCloud? Should it serve as the ancestor in a three-way merge? Can we drop the eager store of in-flight records? Note that the `<=` fix in [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) makes the eager store effective again, as the `<` comparison previously prevented caching the record before sending.
 - **No-ancestor case.** A conflict can arise without a last-known server record, for example when two devices create a row with the same ID. The open questions are how this case should be handled and whether it should be called reconciliation.
 - **Timestamp management for opted-out tables.** Should per-field modification timestamps still be maintained and synced for tables that use a custom strategy instead of the default “field-wise last edit wins”? Keeping them would allow switching back to the default strategy later and exposing timestamps to custom resolvers.
 - **Record decoding.** Custom resolvers need `CKRecord`s decoded into `@Table` types, which the fork achieves through a synthetic SQL `SELECT` executed on the database. Is this approach acceptable?
