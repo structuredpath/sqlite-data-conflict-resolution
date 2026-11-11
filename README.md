@@ -45,7 +45,7 @@ The work is meant to be split into two stages:
 | 2026‑01‑01 | Discussion | [\#352](https://github.com/pointfreeco/sqlite-data/discussions/352) | Macro-based CloudKit configuration via `@SyncedTable`/`@SyncedField` | ✅ API confirmed |
 | 2026‑01‑02 | PR | [\#353](https://github.com/pointfreeco/sqlite-data/pull/353) | ~~Improve MergeConflictTests coverage and naming~~ | ➡️ Superseded by [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) |
 | 2026‑01‑02 | Issue | [\#354](https://github.com/pointfreeco/sqlite-data/issues/354) | Violation of “last edit wins” conflict resolution strategy | 🟠 **Open** |
-| 2026‑01‑05 | Issue | [\#356](https://github.com/pointfreeco/sqlite-data/issues/356) | Inconsistent conflict resolution between production and tests due to unpopulated `CKRecord.modificationDate` in mocks | 🟠 **Open**, inconsistency addressed by [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
+| 2026‑01‑05 | Issue | [\#356](https://github.com/pointfreeco/sqlite-data/issues/356) | Inconsistent conflict resolution between production and tests due to unpopulated `CKRecord.modificationDate` in mocks | ✅ Fixed in [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑01‑08 | Slack Post | n/a | Update on my work on customizable conflict resolution | ✅ Answered |
 | 2026‑01‑13 | PR | [\#370](https://github.com/pointfreeco/sqlite-data/pull/370) | **Three-way merge model for built-in conflict resolution for CloudKit sync** | 📝 Draft |
 | 2026‑01‑28 | Comment | [\#386](https://github.com/pointfreeco/sqlite-data/pull/386#issuecomment-3813266210) | Role of last-known server record & explanation of conflict-on-fetch scenario | ✅ Next step identified |
