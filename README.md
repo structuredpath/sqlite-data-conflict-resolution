@@ -53,7 +53,7 @@ The work is meant to be split into two stages:
 | 2026‑03‑03 | PR | [\#410](https://github.com/pointfreeco/sqlite-data/pull/410) | ~~Fix metadatabase crash in tests on macOS 15~~ | ➡️ Superseded by [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) |
 | 2026‑03‑03 | PR | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) | ~~Set `CKRecord.modificationDate` in `MockCloudDatabase`~~ | ➡️ Superseded by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) and [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑03‑04 | PR | [\#412](https://github.com/pointfreeco/sqlite-data/pull/412) | ~~Fix `MockCloudDatabase` record mutation in modify callback~~ | ➡️ Superseded by [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) |
-| 2026‑03‑05 | PR | [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) | **Overhaul of merge conflict tests** | 📝 Draft, to be rebased onto [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
+| 2026‑03‑05 | PR | [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) | **Overhaul of merge conflict tests** | 🟠 **Awaiting review** |
 | 2026‑05‑19 | Fork PR | [\#1](https://github.com/structuredpath/sqlite-data/pull/1) | Reconciliation for no-ancestor case, contributed by Drew McCormack as a discussion PR on my fork | ✅ Ideas adopted |
 | 2026‑07‑23 | Comment | [\#506](https://github.com/pointfreeco/sqlite-data/pull/506#issuecomment-5108352240) | Observations on third-party fix for sync divergence when `userModificationTime` stamps tie | ✅ OP agreed with more structured approach |
 | 2026‑07‑23 | PR | [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) | Return copied `CKRecord`s when modifying `MockCloudDatabase` (Brandon’s replacement of [\#412](https://github.com/pointfreeco/sqlite-data/pull/412)) | ✅ Merged |
@@ -62,14 +62,14 @@ The work is meant to be split into two stages:
 | 2026‑11‑03 | Comment | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411#issuecomment-6615993277) | Brandon’s review of [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) asking to avoid swizzling in production code | ✅ Addressed by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) |
 | 2026‑11‑04 | PR | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) | ~~Set `CKRecord` system fields in `MockCloudDatabase`~~ (replaces swizzling from [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) with an archive roundtrip and includes `recordChangeTag` mocking) | ➡️ Superseded by [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑11‑04 | Comment | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573#issuecomment-6640035322) | Brandon’s preference for an underscored `_modificationDate` property over the archive roundtrip | ✅ Accepted |
-| 2026‑11‑04 | PR | [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) | Properly track `modificationDate` in mock database (Brandon’s replacement of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | 🟠 **Open** |
+| 2026‑11‑04 | PR | [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) | Properly track `modificationDate` in mock database (Brandon’s replacement of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | ✅ Merged |
+| 2026‑11‑11 | PR | [\#580](https://github.com/pointfreeco/sqlite-data/pull/580) | Use base-36 change tags in `MockCloudDatabase` (extracted from [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | 🟠 **Awaiting review** |
 
 ## Tasks
 
 ### Next Steps
 
-- Await answer on whether [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) has a chance of landing at all
-- Rebase [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) onto [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) and finalize it for review
+- Await review of [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) and [\#580](https://github.com/pointfreeco/sqlite-data/pull/580)
 - Submit PR for reconciliation aka two-way merge test coverage (`pr1`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414))
 - Submit PR fixing conflicts favoring the client over a newer server, addressing #354 (`pr2`, fix ready on top of [\#574](https://github.com/pointfreeco/sqlite-data/pull/574))
 - Submit PR removing the last-known server record update from the send path (`pr4`, depends on [\#414](https://github.com/pointfreeco/sqlite-data/pull/414) and `pr1`)
