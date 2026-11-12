@@ -65,6 +65,7 @@ The work is meant to be split into two stages:
 | 2026‑11‑04 | PR | [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) | Properly track `modificationDate` in mock database (Brandon’s replacement of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | ✅ Merged |
 | 2026‑11‑11 | PR | [\#580](https://github.com/pointfreeco/sqlite-data/pull/580) | Use base-36 change tags in `MockCloudDatabase` (extracted from [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | 🟠 **Awaiting review** |
 | 2026‑11‑11 | Slack Post | [Screenshot](slack/2026-11-11_deduplication.png) | Question on whether conflict resolution should cover deduplication | 🟠 **Awaiting reply** |
+| 2026‑11‑12 | Issue | [\#583](https://github.com/pointfreeco/sqlite-data/issues/583) | Per-field timestamps of client edits survive only in some scenarios | 🟠 **Open** |
 
 ## Tasks
 
