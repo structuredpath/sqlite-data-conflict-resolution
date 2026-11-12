@@ -49,7 +49,7 @@ The work is meant to be split into two stages:
 | 2026‑01‑08 | Slack Post | n/a | Update on my work on customizable conflict resolution | ✅ Answered |
 | 2026‑01‑13 | PR | [\#370](https://github.com/pointfreeco/sqlite-data/pull/370) | **Three-way merge model for built-in conflict resolution for CloudKit sync** | 📝 Draft |
 | 2026‑01‑28 | Comment | [\#386](https://github.com/pointfreeco/sqlite-data/pull/386#issuecomment-3813266210) | Role of last-known server record & explanation of conflict-on-fetch scenario | ✅ Next step identified |
-| 2026‑02‑27 | Slack Post | [Screenshot](slack/2026-02-27-sqlite-data-plans.png) | Discussion about timeline and plans for SQLiteData in 2026 | ✅ Timeline outlined, call offered |
+| 2026‑02‑27 | Slack Post | [Screenshot](slack/2026-02-27_sqlite-data-plans.png) | Discussion about timeline and plans for SQLiteData in 2026 | ✅ Timeline outlined, call offered |
 | 2026‑03‑03 | PR | [\#410](https://github.com/pointfreeco/sqlite-data/pull/410) | ~~Fix metadatabase crash in tests on macOS 15~~ | ➡️ Superseded by [\#508](https://github.com/pointfreeco/sqlite-data/pull/508) |
 | 2026‑03‑03 | PR | [\#411](https://github.com/pointfreeco/sqlite-data/pull/411) | ~~Set `CKRecord.modificationDate` in `MockCloudDatabase`~~ | ➡️ Superseded by [\#573](https://github.com/pointfreeco/sqlite-data/pull/573) and [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) |
 | 2026‑03‑04 | PR | [\#412](https://github.com/pointfreeco/sqlite-data/pull/412) | ~~Fix `MockCloudDatabase` record mutation in modify callback~~ | ➡️ Superseded by [\#507](https://github.com/pointfreeco/sqlite-data/pull/507) |
@@ -64,6 +64,7 @@ The work is meant to be split into two stages:
 | 2026‑11‑04 | Comment | [\#573](https://github.com/pointfreeco/sqlite-data/pull/573#issuecomment-6640035322) | Brandon’s preference for an underscored `_modificationDate` property over the archive roundtrip | ✅ Accepted |
 | 2026‑11‑04 | PR | [\#574](https://github.com/pointfreeco/sqlite-data/pull/574) | Properly track `modificationDate` in mock database (Brandon’s replacement of [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | ✅ Merged |
 | 2026‑11‑11 | PR | [\#580](https://github.com/pointfreeco/sqlite-data/pull/580) | Use base-36 change tags in `MockCloudDatabase` (extracted from [\#573](https://github.com/pointfreeco/sqlite-data/pull/573)) | 🟠 **Awaiting review** |
+| 2026‑11‑11 | Slack Post | [Screenshot](slack/2026-11-11_deduplication.png) | Question on whether conflict resolution should cover deduplication | 🟠 **Awaiting reply** |
 
 ## Tasks
 
